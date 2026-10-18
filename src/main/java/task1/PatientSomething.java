@@ -1,4 +1,4 @@
-package variant2_medicalreport;
+package task1;
 
 import java.io.FileWriter;
 import java.io.IOException;

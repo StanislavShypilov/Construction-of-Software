@@ -1,4 +1,4 @@
-package variant2_discountcalculation;
+package task2;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

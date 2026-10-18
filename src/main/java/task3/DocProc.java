@@ -1,4 +1,4 @@
-package variant2_documentprocessing;
+package task3;
 
 // Опис предметної області: Електронний документообіг підприємства.
 // Завдання коду: Редагування, збереження та друк документів різних форматів у єдиному робочому просторі.
@@ -55,8 +55,7 @@ public class Variant2_DocumentProcessing {
     public static class DocumentEditor {
         public void appendWatermarkAndSave(Document doc, String watermark) {
             // Клієнтський код впевнений, що будь-який Document можна редагувати та зберігати
-            doc.setContent(doc.getContent() + "
-                    [Watermark: " + watermark + "]");
+            doc.setContent(doc.getContent() + "[Watermark: " + watermark + "]");
             doc.save();
         }
     }

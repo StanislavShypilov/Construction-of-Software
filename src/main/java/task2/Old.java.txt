@@ -1,5 +1,5 @@
 package task2;
-
+/*
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -71,4 +71,4 @@ public class DiscountCalculator {
         System.out.println("[DISCOUNT] Замовлення " + order.getOrderId() + ": Категорія=" + category + ", Розрахована знижка=$" + discount);
         return discount;
     }
-}
+}*/

@@ -7,37 +7,6 @@ import java.time.Instant;
 // Опис предметної області: Медична інформаційна система діагностичного центру.
 // Завдання коду: Обробка діагностичних показників пацієнта — валідація фізіологічних параметрів, розрахунок індексу маси тіла (ІМТ) та ризику серцево-судинних захворювань, формування медичного звіту в форматі JSON, збереження запису в архівний журнал та надсилання термінового SMS-сповіщення лікарю при критичних показниках.
 
-public class PatientData {
-    private String patientId;
-    private String fullName;
-    private double weightKg;
-    private double heightCm;
-    private int systolicBloodPressure;
-    private int diastolicBloodPressure;
-    private String doctorPhoneNumber;
-
-    public String getPatientId() { return patientId; }
-    public void setPatientId(String patientId) { this.patientId = patientId; }
-
-    public String getFullName() { return fullName; }
-    public void setFullName(String fullName) { this.fullName = fullName; }
-
-    public double getWeightKg() { return weightKg; }
-    public void setWeightKg(double weightKg) { this.weightKg = weightKg; }
-
-    public double getHeightCm() { return heightCm; }
-    public void setHeightCm(double heightCm) { this.heightCm = heightCm; }
-
-    public int getSystolicBloodPressure() { return systolicBloodPressure; }
-    public void setSystolicBloodPressure(int systolicBloodPressure) { this.systolicBloodPressure = systolicBloodPressure; }
-
-    public int getDiastolicBloodPressure() { return diastolicBloodPressure; }
-    public void setDiastolicBloodPressure(int diastolicBloodPressure) { this.diastolicBloodPressure = diastolicBloodPressure; }
-
-    public String getDoctorPhoneNumber() { return doctorPhoneNumber; }
-    public void setDoctorPhoneNumber(String doctorPhoneNumber) { this.doctorPhoneNumber = doctorPhoneNumber; }
-}
-
 public class MedicalReportManager {
     public void processPatientDiagnostics(PatientData patient) {
         // 1. Валідація вхідних медичних даних

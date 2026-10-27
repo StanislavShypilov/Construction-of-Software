@@ -1,14 +1,14 @@
-package tasks_1to3;
+package lab8;
 
 public final class BookingRequest {
     private final String guestName;
     private final String phone;
-    private final String season;
+    private final Season season;
     private final int nights;
     private final boolean includeBreakfast;
     private final boolean includeParking;
 
-    public BookingRequest(String guestName, String phone, String season, int nights,
+    public BookingRequest(String guestName, String phone, Season season, int nights,
                           boolean includeBreakfast, boolean includeParking) {
         this.guestName = guestName;
         this.phone = phone;
@@ -20,7 +20,7 @@ public final class BookingRequest {
 
     public String getGuestName() { return guestName; }
     public String getPhone() { return phone; }
-    public String getSeason() { return season; }
+    public Season getSeason() { return season; }
     public int getNights() { return nights; }
     public boolean isIncludeBreakfast() { return includeBreakfast; }
     public boolean isIncludeParking() { return includeParking; }

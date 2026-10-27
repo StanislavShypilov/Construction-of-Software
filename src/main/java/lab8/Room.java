@@ -1,4 +1,4 @@
-package tasks_1to3;
+package lab8;
 
 public final class Room {
     private final int roomNumber;
@@ -14,19 +14,8 @@ public final class Room {
         this.basePricePerNight = basePricePerNight;
     }
 
-    public double calculatePriceForNights(int nights, String season) {
-        if (nights <= 0) throw new IllegalArgumentException("Кількість ночей має бути більшою за нуль.");
-        double multiplier;
-        if ("Peak".equalsIgnoreCase(season)) {
-            multiplier = 1.5;
-        } else if ("High".equalsIgnoreCase(season)) {
-            multiplier = 1.25;
-        } else if ("Low".equalsIgnoreCase(season)) {
-            multiplier = 0.9;
-        } else {
-            throw new IllegalArgumentException("Невідомий сезон. Використайте Low, High або Peak.");
-        }
-        return basePricePerNight * nights * multiplier;
+    public double calculatePricePerNight(Season season) {
+        return basePricePerNight * season.getMultiplier();
     }
 
     public int getRoomNumber() { return roomNumber; }

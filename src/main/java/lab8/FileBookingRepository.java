@@ -1,4 +1,4 @@
-package tasks_1to3;
+package lab8;
 
 import java.io.IOException;
 import java.nio.file.Files;

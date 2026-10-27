@@ -1,4 +1,4 @@
-package tasks_1to3;
+package lab8;
 
 import java.nio.file.Path;
 import java.util.Scanner;
@@ -9,6 +9,7 @@ public final class HotelBookingApp {
         SmsNotifier notifier = new ConsoleSmsNotifier();
         AuditLogger auditLogger = new AuditLogger();
         BookingController controller = new BookingController(repository, notifier, auditLogger);
+        SeasonService seasonService = new SeasonService();
 
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("=== Бронювання номера в готелі ===");
@@ -17,7 +18,7 @@ public final class HotelBookingApp {
             System.out.print("Введіть номер телефону: ");
             String phone = scanner.nextLine();
             System.out.print("Введіть сезон (Low/High/Peak): ");
-            String season = scanner.nextLine();
+            Season season = seasonService.getSeason(scanner.nextLine());
             System.out.print("Кількість ночей: ");
             int nights = Integer.parseInt(scanner.nextLine());
             System.out.print("Додати сніданки? (так/ні): ");

@@ -1,4 +1,4 @@
-package tasks_1to3;
+package lab8;
 
 public final class ConsoleSmsNotifier implements SmsNotifier {
     @Override

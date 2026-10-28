@@ -1,4 +1,4 @@
-package lab8;
+package hotelbooking;
 
 public final class Room {
     private final int roomNumber;
@@ -14,8 +14,10 @@ public final class Room {
         this.basePricePerNight = basePricePerNight;
     }
 
-    public double calculatePricePerNight(Season season) {
-        return basePricePerNight * season.getMultiplier();
+    public double calculatePriceForNights(int nights, SeasonPricingPolicy pricingPolicy) {
+        if (nights <= 0) throw new IllegalArgumentException("Кількість ночей має бути більшою за нуль.");
+        if (pricingPolicy == null) throw new IllegalArgumentException("Політика ціноутворення обов'язкова.");
+        return pricingPolicy.calculatePrice(basePricePerNight, nights);
     }
 
     public int getRoomNumber() { return roomNumber; }

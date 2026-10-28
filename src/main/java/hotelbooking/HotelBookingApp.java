@@ -1,4 +1,4 @@
-package lab8;
+package hotelbooking;
 
 import java.nio.file.Path;
 import java.util.Scanner;
@@ -8,8 +8,10 @@ public final class HotelBookingApp {
         BookingRepository repository = new FileBookingRepository(Path.of("bookings.txt"));
         SmsNotifier notifier = new ConsoleSmsNotifier();
         AuditLogger auditLogger = new AuditLogger();
-        BookingController controller = new BookingController(repository, notifier, auditLogger);
-        SeasonService seasonService = new SeasonService();
+        BookingCreationService creationService = new BookingCreationService(new StandardTouristTaxPolicy());
+        BookingCompletionService completionService = new BookingCompletionService(repository, notifier, auditLogger);
+        BookingUseCase bookingUseCase = new DefaultBookingUseCase(creationService, completionService);
+        BookingController controller = new BookingController(bookingUseCase);
 
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("=== Бронювання номера в готелі ===");
@@ -18,7 +20,7 @@ public final class HotelBookingApp {
             System.out.print("Введіть номер телефону: ");
             String phone = scanner.nextLine();
             System.out.print("Введіть сезон (Low/High/Peak): ");
-            Season season = seasonService.getSeason(scanner.nextLine());
+            String season = scanner.nextLine();
             System.out.print("Кількість ночей: ");
             int nights = Integer.parseInt(scanner.nextLine());
             System.out.print("Додати сніданки? (так/ні): ");

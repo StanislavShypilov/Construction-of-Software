@@ -1,4 +1,4 @@
-package lab8;
+package hotelbooking;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,4 +1,4 @@
-package lab8;
+package hotelbooking;
 
 public final class Guest {
     private final int id;
